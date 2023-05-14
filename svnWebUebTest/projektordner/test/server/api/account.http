@@ -1,0 +1,29 @@
+GET http://localhost:3000/
+
+###
+GET http://localhost:3000/account/?account_id=A34ba834d37851c826d079cff357c7582
+
+###
+PUT  http://localhost:3000/account
+Content-Type: application/json
+
+{
+    "name" : "erics account",
+    "mail" : " mal @ mail .dede",
+    "password" : "passweotrdert"
+}
+
+
+###
+DELETE  http://localhost:3000/account/?account_id=acc
+
+
+###
+POST   http://localhost:3000/account/changePayment
+Content-Type: application/json
+
+{
+    "account_id":"AAA34ba834d37851c826d079cff357c7582",
+    "type" : "paypal",
+    "paypal_mail" : " mal @ mail .dede"
+}

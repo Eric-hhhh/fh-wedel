@@ -1,0 +1,49 @@
+GET http://localhost:3000/
+
+
+
+###
+GET   http://localhost:3000/statistic/AverageWatchtimeAllMovies
+
+
+###
+GET   http://localhost:3000/statistic/medianWatchtimeAllMovies
+
+
+
+###
+GET   http://localhost:3000/statistic/WatchtimeAllMoviesGenre
+Content-Type: application/json
+
+{
+    "genres" : [
+  "Fantasy",     
+  "Silent",     
+  "Short",
+  "Found Footage"
+  ]
+
+}
+###
+GET   http://localhost:3000/statistic/WatchtimeAllMoviesGenre
+Content-Type: application/json
+
+{
+    "genres" : [
+  "Fantasy",       "Silent",      "Short",
+  "Crime",         "Drama",       "Animated",
+  "Historical",    "Comedy",      "Adventure",
+  "Western",       "Horror",      "Documentary",
+  "Romance",       "War",         "Mystery",
+  "Musical",       "Biography",   "Action",
+  "Thriller",      "Teen",        "Sport",
+  "Sports",        "Independent", "Spy",
+  "Satire",        "Family",      "Science Fiction",
+  "Disaster",      "Noir",        "Supernatural",
+  "Political",     "Suspense",    "Dance",
+  "Superhero",     "Live Action", "Legal",
+  "Performance",   "Slasher",     "Martial Arts",
+  "Found Footage"
+  ]
+
+}

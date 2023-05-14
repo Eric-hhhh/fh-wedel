@@ -1,0 +1,243 @@
+GET http://localhost:3000/
+
+###
+
+GET http://localhost:3000/query-parameter?name=Marc
+
+###
+
+GET http://localhost:3000/account/A34ba834d37851c826d079cff357c7582/profile/EFGH
+
+###
+
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "username": "test",
+    "password": "geheim"
+}
+
+
+
+
+###
+PUT  http://localhost:3000/account/
+Content-Type: application/json
+
+{
+    "name": "nmaeraccont",
+    "mail": "etse@mail.deede",
+    "password" : "passsserdede"
+}
+
+
+###
+PUT  http://localhost:3000/profile/
+Content-Type: application/json
+
+{
+    "account_id": "A72ff6c6ee01e0bf66f5ff34f6520083e",
+    "name": "etse@mail.deede",
+    "image" : "passsserdede"
+}
+
+###
+GET  http://localhost:3000/account?account_id=Aa69bd15b102eb2b25b5833c349e00d40
+
+
+###
+DELETE   http://localhost:3000/account?account_id=A82492ca296c2d099d671b039c0c9259d
+
+
+###
+DELETE   http://localhost:3000/profile?profile_id=Pe3368027c5d7d71617a62bb77603b5c1
+
+
+###
+POST   http://localhost:3000/account/A68960c486334cb0058352a40f424d18f/
+Content-Type: application/json
+
+{
+    "type": "paypal",
+    "paypal_mail": "123345"
+}
+
+###
+GET http://localhost:3000/movie/allGenres
+Content-Type: application/json
+
+{
+    "movies" : [  
+        {
+            "id": "Mdbb2d216fb5f6e8da3ee16aaf5197d97",
+            "title": "Alice in Wonderland",
+            "release": 1903,
+            "runtime": 108,
+            "cast": [
+                "May Clark"
+            ],
+            "genres": [
+                "Fantasy",
+                "Silent"
+            ],
+            "extract": "Alice in Wonderland is a 1903 British silent fantasy film directed by Cecil Hepworth and Percy Stow. Only one copy of the original film is known to exist. The British Film Institute (BFI) partially restored the movie and its original film tinting and released it in 2010. According to BFI, the original film ran about 12 minutes; the restoration runs 9 minutes and 35 seconds. At the beginning of the restoration, it states that this is the first movie adaptation of Lewis Carroll's 1865 children's book Alice's Adventures in Wonderland. It was filmed mostly at Port Meadow in Oxford.",
+            "thumbnail": {
+                "file": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Norman_Whitten_Mad_Hatter_1903.jpg/320px-Norman_Whitten_Mad_Hatter_1903.jpg",
+                "width": 320,
+                "height": 202
+            }
+        },
+        {
+            "id": "Mb5c2636cc1b071c210d7136d1cd9622f",
+            "title": "The Automobile Thieves",
+            "release": 1906,
+            "runtime": 11,
+            "cast": [
+                "J. Stuart Blackton",
+                "Florence Lawrence"
+            ],
+            "genres": [
+                "Short",
+                "Crime",
+                "Drama",
+                "Silent"
+            ],
+            "extract": "The Automobile Thieves is an American crime-drama silent film directed by J. Stuart Blackton. The picture stars Blackton and Florence Lawrence. It was released on November 10, 1906 by The American Vitagraph Company; a print of the feature is preserved in the UCLA Film and Television Archive.",
+            "thumbnail": {
+                "file": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Advertisement_for_silent_film_The_Automobile_Thieves_in_newspaper%2C_The_New_York_Clipper.jpg/320px-Advertisement_for_silent_film_The_Automobile_Thieves_in_newspaper%2C_The_New_York_Clipper.jpg",
+                "width": 320,
+                "height": 496
+            }
+        }
+
+    ]
+}
+
+
+###
+GET http://localhost:3000/movie/?phrase=in
+Content-Type: application/json
+
+{
+    "movies" : [  
+        {
+            "id": "Mdbb2d216fb5f6e8da3ee16aaf5197d97",
+            "title": "Alice in Wonderland",
+            "release": 1903,
+            "runtime": 108,
+            "cast": [
+                "May Clark"
+            ],
+            "genres": [
+                "Fantasy",
+                "Silent"
+            ],
+            "extract": "Alice in Wonderland is a 1903 British silent fantasy film directed by Cecil Hepworth and Percy Stow. Only one copy of the original film is known to exist. The British Film Institute (BFI) partially restored the movie and its original film tinting and released it in 2010. According to BFI, the original film ran about 12 minutes; the restoration runs 9 minutes and 35 seconds. At the beginning of the restoration, it states that this is the first movie adaptation of Lewis Carroll's 1865 children's book Alice's Adventures in Wonderland. It was filmed mostly at Port Meadow in Oxford.",
+            "thumbnail": {
+                "file": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Norman_Whitten_Mad_Hatter_1903.jpg/320px-Norman_Whitten_Mad_Hatter_1903.jpg",
+                "width": 320,
+                "height": 202
+            }
+        },
+        {
+            "id": "Mb5c2636cc1b071c210d7136d1cd9622f",
+            "title": "The Automobile Thieves",
+            "release": 1906,
+            "runtime": 11,
+            "cast": [
+                "J. Stuart Blackton",
+                "Florence Lawrence"
+            ],
+            "genres": [
+                "Short",
+                "Crime",
+                "Drama",
+                "Silent"
+            ],
+            "extract": "The Automobile Thieves is an American crime-drama silent film directed by J. Stuart Blackton. The picture stars Blackton and Florence Lawrence. It was released on November 10, 1906 by The American Vitagraph Company; a print of the feature is preserved in the UCLA Film and Television Archive.",
+            "thumbnail": {
+                "file": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Advertisement_for_silent_film_The_Automobile_Thieves_in_newspaper%2C_The_New_York_Clipper.jpg/320px-Advertisement_for_silent_film_The_Automobile_Thieves_in_newspaper%2C_The_New_York_Clipper.jpg",
+                "width": 320,
+                "height": 496
+            }
+        }
+
+    ]
+}
+
+
+###
+GET http://localhost:3000/movie/?genre=silent
+Content-Type: application/json
+
+{
+    "movies" : [  
+        {
+            "id": "Mdbb2d216fb5f6e8da3ee16aaf5197d97",
+            "title": "Alice in Wonderland",
+            "release": 1903,
+            "runtime": 108,
+            "cast": [
+                "May Clark"
+            ],
+            "genres": [
+                "Fantasy",
+                "Silent"
+            ],
+            "extract": "Alice in Wonderland is a 1903 British silent fantasy film directed by Cecil Hepworth and Percy Stow. Only one copy of the original film is known to exist. The British Film Institute (BFI) partially restored the movie and its original film tinting and released it in 2010. According to BFI, the original film ran about 12 minutes; the restoration runs 9 minutes and 35 seconds. At the beginning of the restoration, it states that this is the first movie adaptation of Lewis Carroll's 1865 children's book Alice's Adventures in Wonderland. It was filmed mostly at Port Meadow in Oxford.",
+            "thumbnail": {
+                "file": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Norman_Whitten_Mad_Hatter_1903.jpg/320px-Norman_Whitten_Mad_Hatter_1903.jpg",
+                "width": 320,
+                "height": 202
+            }
+        },
+        {
+            "id": "Mb5c2636cc1b071c210d7136d1cd9622f",
+            "title": "The Automobile Thieves",
+            "release": 1906,
+            "runtime": 11,
+            "cast": [
+                "J. Stuart Blackton",
+                "Florence Lawrence"
+            ],
+            "genres": [
+                "Short",
+                "Crime",
+                "Drama",
+                "Silent"
+            ],
+            "extract": "The Automobile Thieves is an American crime-drama silent film directed by J. Stuart Blackton. The picture stars Blackton and Florence Lawrence. It was released on November 10, 1906 by The American Vitagraph Company; a print of the feature is preserved in the UCLA Film and Television Archive.",
+            "thumbnail": {
+                "file": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Advertisement_for_silent_film_The_Automobile_Thieves_in_newspaper%2C_The_New_York_Clipper.jpg/320px-Advertisement_for_silent_film_The_Automobile_Thieves_in_newspaper%2C_The_New_York_Clipper.jpg",
+                "width": 320,
+                "height": 496
+            }
+        }
+
+    ]
+}
+
+
+
+
+###
+DELETE   http://localhost:3000/profile?profile_id=Pe3368027c5d7d71617a62bb77603b5c1
+
+###
+PUT  http://localhost:3000/profile/bookmark?profile_id=P0a30ec45ab0578af5ef913f375514328&movie_id=M370e1f2dc5084f39bbd7bc542d876661
+
+###
+PUT  http://localhost:3000/profile/favorite?profile_id=P0a30ec45ab0578af5ef913f375514328&movie_id=M370e1f2dc5084f39bbd7bc542d876661
+
+###
+POST   http://localhost:3000/profile/history/?profile_id=P0a30ec45ab0578af5ef913f375514328&movie_id=Mb638c130492bf33679c8f6e797ca1125&timestamp=80
+
+
+###
+GET   http://localhost:3000/profile/overallwatchtime/?profile_id=P0a30ec45ab0578af5ef913f375514328
+
+###
+GET   http://localhost:3000/profile/genrewatchtime/?profile_id=P0a30ec45ab0578af5ef913f375514328
+
+
